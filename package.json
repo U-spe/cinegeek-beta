@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "opennextjs-cloudflare build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint . --cache",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "build:next": "next build",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "preview": "npm run build && opennextjs-cloudflare preview",
+    "deploy": "npm run build && opennextjs-cloudflare deploy",
+    "postbuild": "opennextjs-cloudflare build --skipNextBuild",
+    "upload": "npm run build && opennextjs-cloudflare upload"
   },
   "dependencies": {
     "@next/third-parties": "16.4.6",
