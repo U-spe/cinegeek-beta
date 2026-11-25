@@ -41,7 +41,7 @@ jobs:
           git push
 
       - name: Install clean dependency tree
-        run: npm ci --ignore-scripts
+        run: npm ci
 
       - name: Type-check application
         run: npm run typecheck

@@ -48,7 +48,7 @@ export const siteConfig = {
       icon: Icons.youtube,
     },
   ],
-  footerItems: [],
+  footerItems: [] as { title: string; href: string }[],
   mainNav: [
     {
       title: 'Home',
