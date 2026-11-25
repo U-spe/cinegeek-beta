@@ -146,3 +146,116 @@ body,
   background-color: rgba(17, 17, 17, 0);
   background-image: -webkit-linear-gradient(top, rgba(17, 17, 17, 0), #111);
 }
+
+
+/* CineGeek monochrome glass system */
+:root,
+.dark {
+  color-scheme: dark;
+  --background: 220 7% 5%;
+  --foreground: 0 0% 96%;
+  --card: 220 7% 9%;
+  --card-foreground: 0 0% 96%;
+  --popover: 220 7% 8%;
+  --popover-foreground: 0 0% 96%;
+  --primary: 0 0% 96%;
+  --primary-foreground: 220 7% 7%;
+  --secondary: 220 6% 14%;
+  --secondary-foreground: 0 0% 94%;
+  --muted: 220 5% 13%;
+  --muted-foreground: 0 0% 62%;
+  --accent: 220 5% 18%;
+  --accent-foreground: 0 0% 98%;
+  --border: 0 0% 100% / 0.11;
+  --input: 0 0% 100% / 0.13;
+  --ring: 0 0% 80%;
+  --radius: 1rem;
+}
+
+html {
+  background: #08090b;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  color: #f4f4f5;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(255,255,255,.075), transparent 34rem),
+    radial-gradient(ellipse at 88% 18%, rgba(180,185,195,.055), transparent 32rem),
+    linear-gradient(145deg, #08090b 0%, #101114 52%, #090a0c 100%);
+  background-attachment: fixed;
+}
+
+/* Shared glass surfaces across every route */
+:where(header, nav, [role="dialog"], [data-radix-popper-content-wrapper] > *, .glass,
+  [class*="card"], [class*="Card"], [class*="panel"], [class*="Panel"],
+  [class*="popover"], [class*="Popover"], [class*="modal"], [class*="Modal"]) {
+  border-color: rgba(255,255,255,.105);
+}
+
+:where(header, nav) {
+  background: rgba(15,16,19,.68);
+  -webkit-backdrop-filter: blur(22px) saturate(135%);
+  backdrop-filter: blur(22px) saturate(135%);
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
+
+:where([class*="card"], [class*="Card"], [class*="panel"], [class*="Panel"],
+  [class*="popover"], [class*="Popover"], [class*="modal"], [class*="Modal"], .glass) {
+  background-color: rgba(255,255,255,.045);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  backdrop-filter: blur(18px) saturate(125%);
+  box-shadow: 0 12px 40px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.045);
+}
+
+:where(button, [role="button"], a[class*="button"], a[class*="Button"]) {
+  transition: background-color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+:where(button, [role="button"]):hover {
+  border-color: rgba(255,255,255,.28);
+}
+
+:where(input, textarea, select) {
+  color: #f4f4f5;
+  background: rgba(255,255,255,.045);
+  border-color: rgba(255,255,255,.14);
+  border-radius: .8rem;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+:where(input, textarea, select):focus {
+  outline: none;
+  border-color: rgba(255,255,255,.48);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.07);
+}
+
+::selection {
+  color: #08090b;
+  background: #e5e7eb;
+}
+
+/* Requested removals apply sitewide */
+footer {
+  display: none !important;
+}
+
+header a[href*="github.com"],
+nav a[href*="github.com"],
+header a[aria-label*="github" i],
+nav a[aria-label*="github" i],
+header a[title*="github" i],
+nav a[title*="github" i] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
