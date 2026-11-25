@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "eslint . --cache",
     "format": "prettier --write .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:next": "next build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "@next/third-parties": "16.4.6",
@@ -33,8 +36,8 @@
     "lucide-react": "^0.279.0",
     "next": "16.4.6",
     "next-themes": "^0.2.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-youtube": "^10.1.0",
     "superjson": "^1.13.3",
     "tailwind-merge": "^1.14.0",
@@ -44,17 +47,17 @@
   },
   "devDependencies": {
     "@types/node": "^20.6.2",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.15",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.4.6",
-    "husky": "^8.0.0",
-    "lint-staged": "^15.2.0",
     "postcss": "^8.4.29",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "@opennextjs/cloudflare": "1.20.18",
+    "wrangler": "4.167.0"
   }
 }
