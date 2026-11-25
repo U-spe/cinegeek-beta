@@ -48,3 +48,8 @@ jobs:
 
       - name: Build Cloudflare Worker
         run: npm run build
+
+      - name: Validate Cloudflare Worker deployment
+        run: |
+          test -f .open-next/worker.js
+          npx wrangler deploy --dry-run
