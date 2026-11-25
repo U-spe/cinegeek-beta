@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "eslint . --cache",
     "format": "prettier --write .",
-    "typecheck": "tsc --noEmit",
-    "prepare": "husky install"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@next/third-parties": "16.4.6",
