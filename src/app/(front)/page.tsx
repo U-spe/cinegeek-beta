@@ -168,7 +168,7 @@ export default function Index() {
         </div>
 
         <div className="grid gap-3 md:grid-cols-3">
-          {destinations.map((item, index) => {
+          {destinations.map((item) => {
             const Icon = item.icon;
             return (
               <Link
